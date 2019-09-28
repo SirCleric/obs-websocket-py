@@ -29,6 +29,26 @@ class SourceOrderChanged(base_classes.Baseevents):
     def getSources(self):
         return self.datain["sources"]
 
+class SceneItemTransformChanged(base_classes.Baseevents):
+    def __init__(self):
+        self.name = "SceneItemTransformChanged"
+        self.datain["item-name"] = None
+        self.datain["scene-name"] = None
+        self.datain["item-id"] = None
+        self.datain["transform"] = None
+    
+    def getSceneName(self):
+        return self.datain["scene-name"]
+
+    def getItemName(self):
+        return self.datain["item-name"]
+
+    def getItemId(self):
+            return self.datain["item-id"]
+
+    def getItemTransform(self):
+        return self.datain["transform"]
+
 
 class SceneItemAdded(base_classes.Baseevents):
     """An item has been added to the current scene.
