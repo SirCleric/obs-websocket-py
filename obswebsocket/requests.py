@@ -2216,88 +2216,90 @@ class GetSceneItemProperties(base_classes.Baserequests):
             type: double
             Height of the bounding box.
     """
-    def __init__(self, item_id, item_name, scene = None):
+    def __init__(self, item_name, scene = None):
         base_classes.Baserequests.__init__(self)
         self.name = "GetSceneItemProperties"
-        self.datain["scene"] = None
-        self.datain["item.name"] = None
-        self.datain["item.id"] = None
-        self.datain["item.position.x"] = None
-        self.datain["item.position.y"] = None
-        self.datain["item.position.alignment"] = None
-        self.datain["item.rotation"] = None
-        self.datain["item.scale.x"] = None
-        self.datain["item.scale.y"] = None
-        self.datain["item.crop.top"] = None
-        self.datain["item.crop.right"] = None
-        self.datain["item.crop.bottom"] = None
-        self.datain["item.crop.left"] = None
-        self.datain["item.visible"] = None
-        self.datain["item.locked"] = None
-        self.datain["item.bounds.type"] = None
-        self.datain["item.bounds.alignment"] = None
-        self.datain["item.bounds.x"] = None
-        self.datain["item.bounds.y"] = None
-        self.dataout["item.id"] = item_id
-        self.dataout["item.name"] = item_name
-        self.dataout["scene"] = scene
+        self.dataout["name"] = item_name
+        self.dataout["scene-name"] = scene
+        self.datain["name"] = None
+        self.datain["position.x"] = None
+        self.datain["position.y"] = None
+        self.datain["position.alignment"] = None
+        self.datain["rotation"] = None
+        self.datain["scale.x"] = None
+        self.datain["scale.y"] = None
+        self.datain["crop.top"] = None
+        self.datain["crop.right"] = None
+        self.datain["crop.bottom"] = None
+        self.datain["crop.left"] = None
+        self.datain["visible"] = None
+        self.datain["locked"] = None
+        self.datain["bounds.type"] = None
+        self.datain["bounds.alignment"] = None
+        self.datain["bounds.x"] = None
+        self.datain["bounds.y"] = None
+        self.datain["width"] = None
+        self.datain["height"] = None
 
     def getScene(self):
-        return self.datain["scene"]
+        return self.datain["scene-name"]
 
-    def getItem_name(self):
-        return self.datain["item.name"]
+    def getname(self):
+        return self.datain["name"]
 
-    def getItem_id(self):
-        return self.datain["item.id"]
+    def getposition_x(self):
+        return self.datain["position.x"]
 
-    def getItem_position_x(self):
-        return self.datain["item.position.x"]
+    def getposition_y(self):
+        return self.datain["position.y"]
 
-    def getItem_position_y(self):
-        return self.datain["item.position.y"]
+    def getposition_alignment(self):
+        return self.datain["position.alignment"]
 
-    def getItem_position_alignment(self):
-        return self.datain["item.position.alignment"]
+    def getrotation(self):
+        return self.datain["rotation"]
 
-    def getItem_rotation(self):
-        return self.datain["item.rotation"]
+    def getscale_x(self):
+        return self.datain["scale.x"]
 
-    def getItem_scale_x(self):
-        return self.datain["item.scale.x"]
+    def getscale_y(self):
+        return self.datain["scale.y"]
 
-    def getItem_scale_y(self):
-        return self.datain["item.scale.y"]
+    def getcrop_top(self):
+        return self.datain["crop.top"]
 
-    def getItem_crop_top(self):
-        return self.datain["item.crop.top"]
+    def getcrop_right(self):
+        return self.datain["crop.right"]
 
-    def getItem_crop_right(self):
-        return self.datain["item.crop.right"]
+    def getcrop_bottom(self):
+        return self.datain["crop.bottom"]
 
-    def getItem_crop_bottom(self):
-        return self.datain["item.crop.bottom"]
+    def getcrop_left(self):
+        return self.datain["crop.left"]
 
-    def getItem_crop_left(self):
-        return self.datain["item.crop.left"]
+    def getvisible(self):
+        return self.datain["visible"]
 
-    def getItem_visible(self):
-        return self.datain["item.visible"]
+    def getlocked(self):
+        return self.datain["locked"]
 
-    def getItem_locked(self):
-        return self.datain["item.locked"]
+    def getbounds_type(self):
+        return self.datain["bounds.type"]
 
-    def getItem_bounds_type(self):
-        return self.datain["item.bounds.type"]
+    def getbounds_alignment(self):
+        return self.datain["bounds.alignment"]
 
-    def getItem_bounds_alignment(self):
-        return self.datain["item.bounds.alignment"]
+    def getbounds_x(self):
+        return self.datain["bounds.x"]
 
-    def getItem_bounds_x(self):
-        return self.datain["item.bounds.x"]
+    def getbounds_y(self):
+        return self.datain["bounds.y"]
 
-    def getItem_bounds_y(self):
-        return self.datain["item.bounds.y"]
+    def getWidth(self):
+        return self.datain["width"]
+
+    def getHeight(self):
+        return self.datain["height"]
 
 
 class SetSceneItemProperties(base_classes.Baserequests):
@@ -2362,28 +2364,27 @@ class SetSceneItemProperties(base_classes.Baserequests):
             type: double
             The new height of the bounding box.
     """
-    def __init__(self, item_name, item_id, item_position_x, item_position_y, item_position_alignment, item_rotation, item_scale_x, item_scale_y, item_crop_top, item_crop_bottom, item_crop_left, item_crop_right, item_visible, item_locked, item_bounds_type, item_bounds_alignment, item_bounds_x, item_bounds_y, scene = None):
+    def __init__(self, item_name, item_position_x=None, item_position_y=None, item_position_alignment=None, item_rotation=None, item_scale_x=None, item_scale_y=None, item_crop_top=None, item_crop_bottom=None, item_crop_left=None, item_crop_right=None, item_visible=None, item_locked=None, item_bounds_type=None, item_bounds_alignment=None, item_bounds_x=None, item_bounds_y=None, scene = None):
         base_classes.Baserequests.__init__(self)
         self.name = "SetSceneItemProperties"
-        self.dataout["item.name"] = item_name
-        self.dataout["item.id"] = item_id
-        self.dataout["item.position.x"] = item_position_x
-        self.dataout["item.position.y"] = item_position_y
-        self.dataout["item.position.alignment"] = item_position_alignment
-        self.dataout["item.rotation"] = item_rotation
-        self.dataout["item.scale.x"] = item_scale_x
-        self.dataout["item.scale.y"] = item_scale_y
-        self.dataout["item.crop.top"] = item_crop_top
-        self.dataout["item.crop.bottom"] = item_crop_bottom
-        self.dataout["item.crop.left"] = item_crop_left
-        self.dataout["item.crop.right"] = item_crop_right
-        self.dataout["item.visible"] = item_visible
-        self.dataout["item.locked"] = item_locked
-        self.dataout["item.bounds.type"] = item_bounds_type
-        self.dataout["item.bounds.alignment"] = item_bounds_alignment
-        self.dataout["item.bounds.x"] = item_bounds_x
-        self.dataout["item.bounds.y"] = item_bounds_y
-        self.dataout["scene"] = scene
+        self.dataout["item"] = item_name
+        self.dataout["position.x"] = item_position_x
+        self.dataout["position.y"] = item_position_y
+        self.dataout["position.alignment"] = item_position_alignment
+        self.dataout["rotation"] = item_rotation
+        self.dataout["scale.x"] = item_scale_x
+        self.dataout["scale.y"] = item_scale_y
+        self.dataout["crop.top"] = item_crop_top
+        self.dataout["crop.bottom"] = item_crop_bottom
+        self.dataout["crop.left"] = item_crop_left
+        self.dataout["crop.right"] = item_crop_right
+        self.dataout["visible"] = item_visible
+        self.dataout["locked"] = item_locked
+        self.dataout["bounds.type"] = item_bounds_type
+        self.dataout["bounds.alignment"] = item_bounds_alignment
+        self.dataout["bounds.x"] = item_bounds_x
+        self.dataout["bounds.y"] = item_bounds_y
+        self.dataout["scene-name"] = scene
 
 
 class ResetSceneItem(base_classes.Baserequests):
