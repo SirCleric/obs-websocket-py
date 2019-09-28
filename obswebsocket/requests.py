@@ -2219,7 +2219,7 @@ class GetSceneItemProperties(base_classes.Baserequests):
     def __init__(self, item_name, scene = None):
         base_classes.Baserequests.__init__(self)
         self.name = "GetSceneItemProperties"
-        self.dataout["name"] = item_name
+        self.dataout["item"] = item_name
         self.dataout["scene-name"] = scene
         self.datain["name"] = None
         self.datain["position.x"] = None
