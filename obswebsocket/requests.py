@@ -2248,22 +2248,22 @@ class GetSceneItemProperties(base_classes.Baserequests):
         return self.datain["name"]
 
     def getPosition_x(self):
-        return self.datain["position.x"]
+        return self.datain["position"]["position.x"]
 
     def getPosition_y(self):
-        return self.datain["position.y"]
+        return self.datain["position"]["position.y"]
 
     def getPosition_alignment(self):
-        return self.datain["position.alignment"]
+        return self.datain["position"]["position.alignment"]
 
     def getRotation(self):
         return self.datain["rotation"]
 
     def getScale_x(self):
-        return self.datain["scale.x"]
+        return self.datain["scale"]["scale.x"]
 
     def getScale_y(self):
-        return self.datain["scale.y"]
+        return self.datain["scale"]["scale.y"]
 
     def getCrop_top(self):
         return self.datain["crop.top"]
