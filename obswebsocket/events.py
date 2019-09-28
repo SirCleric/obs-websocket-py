@@ -31,9 +31,10 @@ class SourceOrderChanged(base_classes.Baseevents):
 
 class SceneItemTransformChanged(base_classes.Baseevents):
     def __init__(self):
+        base_classes.Baseevents.__init__(self)
         self.name = "SceneItemTransformChanged"
-        self.datain["item-name"] = None
         self.datain["scene-name"] = None
+        self.datain["item-name"] = None
         self.datain["item-id"] = None
         self.datain["transform"] = None
     
