@@ -2244,55 +2244,55 @@ class GetSceneItemProperties(base_classes.Baserequests):
     def getScene(self):
         return self.datain["scene-name"]
 
-    def getname(self):
+    def getName(self):
         return self.datain["name"]
 
-    def getposition_x(self):
+    def getPosition_x(self):
         return self.datain["position.x"]
 
-    def getposition_y(self):
+    def getPosition_y(self):
         return self.datain["position.y"]
 
-    def getposition_alignment(self):
+    def getPosition_alignment(self):
         return self.datain["position.alignment"]
 
-    def getrotation(self):
+    def getRotation(self):
         return self.datain["rotation"]
 
-    def getscale_x(self):
+    def getScale_x(self):
         return self.datain["scale.x"]
 
-    def getscale_y(self):
+    def getScale_y(self):
         return self.datain["scale.y"]
 
-    def getcrop_top(self):
+    def getCrop_top(self):
         return self.datain["crop.top"]
 
-    def getcrop_right(self):
+    def getCrop_right(self):
         return self.datain["crop.right"]
 
-    def getcrop_bottom(self):
+    def getCrop_bottom(self):
         return self.datain["crop.bottom"]
 
-    def getcrop_left(self):
+    def getCrop_left(self):
         return self.datain["crop.left"]
 
-    def getvisible(self):
+    def getVisible(self):
         return self.datain["visible"]
 
-    def getlocked(self):
+    def getLocked(self):
         return self.datain["locked"]
 
-    def getbounds_type(self):
+    def getBounds_type(self):
         return self.datain["bounds.type"]
 
-    def getbounds_alignment(self):
+    def getBounds_alignment(self):
         return self.datain["bounds.alignment"]
 
-    def getbounds_x(self):
+    def getBounds_x(self):
         return self.datain["bounds.x"]
 
-    def getbounds_y(self):
+    def getBounds_y(self):
         return self.datain["bounds.y"]
 
     def getWidth(self):
