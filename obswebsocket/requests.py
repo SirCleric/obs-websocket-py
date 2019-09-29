@@ -2266,16 +2266,16 @@ class GetSceneItemProperties(base_classes.Baserequests):
         return self.datain["scale"]["y"]
 
     def getCrop_top(self):
-        return self.datain["crop.top"]
+        return self.datain["crop"]["top"]
 
     def getCrop_right(self):
-        return self.datain["crop.right"]
+        return self.datain["crop"]["right"]
 
     def getCrop_bottom(self):
-        return self.datain["crop.bottom"]
+        return self.datain["crop"]["bottom"]
 
     def getCrop_left(self):
-        return self.datain["crop.left"]
+        return self.datain["crop"]["left"]
 
     def getVisible(self):
         return self.datain["visible"]
@@ -2284,16 +2284,16 @@ class GetSceneItemProperties(base_classes.Baserequests):
         return self.datain["locked"]
 
     def getBounds_type(self):
-        return self.datain["bounds.type"]
+        return self.datain["bounds"]["type"]
 
     def getBounds_alignment(self):
-        return self.datain["bounds.alignment"]
+        return self.datain["bounds"]["alignment"]
 
     def getBounds_x(self):
-        return self.datain["bounds.x"]
+        return self.datain["bounds"]["x"]
 
     def getBounds_y(self):
-        return self.datain["bounds.y"]
+        return self.datain["bounds"]["y"]
 
     def getWidth(self):
         return self.datain["width"]
@@ -2371,16 +2371,10 @@ class SetSceneItemProperties(base_classes.Baserequests):
         self.dataout["position"] = {"alignment": item_position_alignment, "x": item_position_x, "y": item_position_y}
         self.dataout["rotation"] = item_rotation
         self.dataout["scale"] = {"x": item_scale_x, "y": item_scale_y}
-        self.dataout["crop.top"] = item_crop_top
-        self.dataout["crop.bottom"] = item_crop_bottom
-        self.dataout["crop.left"] = item_crop_left
-        self.dataout["crop.right"] = item_crop_right
+        self.dataout["crop"] = {"top": item_crop_top, "bottom": item_crop_bottom, "left": item_crop_left, "right": item_crop_right}
         self.dataout["visible"] = item_visible
         self.dataout["locked"] = item_locked
-        self.dataout["bounds.type"] = item_bounds_type
-        self.dataout["bounds.alignment"] = item_bounds_alignment
-        self.dataout["bounds.x"] = item_bounds_x
-        self.dataout["bounds.y"] = item_bounds_y
+        self.dataout["bounds"] = {"alignment": item_bounds_alignment,"type": item_bounds_type, "x": item_bounds_x, "y": item_bounds_y}
         self.dataout["scene-name"] = scene
 
 
