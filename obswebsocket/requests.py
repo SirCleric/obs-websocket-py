@@ -2368,12 +2368,9 @@ class SetSceneItemProperties(base_classes.Baserequests):
         base_classes.Baserequests.__init__(self)
         self.name = "SetSceneItemProperties"
         self.dataout["item"] = item_name
-        self.dataout["position.x"] = item_position_x
-        self.dataout["position.y"] = item_position_y
-        self.dataout["position.alignment"] = item_position_alignment
+        self.dataout["position"] = {"alignment": item_position_alignment, "x": item_position_x, "y": item_position_y}
         self.dataout["rotation"] = item_rotation
-        self.dataout["scale.x"] = item_scale_x
-        self.dataout["scale.y"] = item_scale_y
+        self.dataout["scale"] = {"x": item_scale_x, "y": item_scale_y}
         self.dataout["crop.top"] = item_crop_top
         self.dataout["crop.bottom"] = item_crop_bottom
         self.dataout["crop.left"] = item_crop_left
